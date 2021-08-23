@@ -1,4 +1,4 @@
-using System;
+using System.IO;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -17,6 +17,8 @@ namespace ZingGameApi
         
         public Startup(IConfiguration configuration)
         {
+            var envPath = Path.Combine(Directory.GetCurrentDirectory(), ".env");
+            EnvironmentConfiguration.LoadEnvironment(envPath);
             _configuration = configuration;
         }
 

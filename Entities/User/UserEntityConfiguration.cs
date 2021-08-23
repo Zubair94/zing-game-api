@@ -1,8 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ZingGameApi.Entities;
 
-namespace ZingGameApi.Models
+namespace ZingGameApi.Entities.User
 {
     public class UserEntityConfiguration: IEntityTypeConfiguration<User>
     {

@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using ZingGameApi.Entities;
-using ZingGameApi.Models;
+using ZingGameApi.Entities.User;
 
 namespace ZingGameApi.Data
 {

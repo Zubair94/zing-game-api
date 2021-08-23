@@ -1,9 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using ZingGameApi.Data;
-using ZingGameApi.Entities;
+using ZingGameApi.Entities.User;
 using System.Collections.Generic;
-using System.Linq;
 using System;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace ZingGameApi.Controllers
 {
@@ -21,16 +22,16 @@ namespace ZingGameApi.Controllers
 
         [MapToApiVersion("1.0")]
         [HttpGet]
-        public ActionResult<IEnumerable<User>> GetUsers()
+        public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
-            return _context.Users.ToList();
+            return await _context.Users.ToListAsync();
         }
 
         [MapToApiVersion("1.0")]
         [HttpGet("{id}")]
-        public ActionResult<User> GetUser(Guid id)
+        public async Task<ActionResult<User>> GetUser(Guid id)
         {
-            return _context.Users.Find(id);
+            return await _context.Users.FindAsync(id);
         }
     }
 }
